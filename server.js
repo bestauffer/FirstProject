@@ -26,13 +26,7 @@ router.get('/blake', function(req, res) {
     res.sendFile(path.join(__dirname + '/blake.html')); 
 }); 
 
-// image
-app.use(express.static(__dirname + '/public')); 
-app.listen(3000, function () {
-    console.log('Express server is listening 3000, use this url - localhost:3000/kenny-rounded.png');
-});
-
 //add the router 
 app.use('/', router); 
-// app.listen(process.env.port || 3000); // commented, throws error Error: listen EADDRINUSE: address already in use :::3000
+app.listen(process.env.port || 3000);
 console.log('Running at Port 3000'); 
